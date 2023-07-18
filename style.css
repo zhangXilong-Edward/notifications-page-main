@@ -5,49 +5,53 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
 }
 
-.container {
-    height: 100%;
-    border-radius: 10px;
-    box-shadow: 20px 10px 50px hsl(205, 33%, 90%);
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 1.5rem;
-    margin: 3rem 20rem;
-    border-radius: 1.5rem;
+.container{
+    padding: 4%; 
+    margin: 20px 5px; 
 }
 
 .container .topbar {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.container .unread-count {
+.container .topbar .notification-text {
+    font-weight: 800;
+    font-size: 130%;
+}
+
+.container .topbar .unread-count {
     background-color: hsl(219, 12%, 42%);
-    padding: 0.3rem 0.8rem;
-    margin: 0 0.5rem;
+    padding: 2px 5px;
+    margin: 0 5px;
     color: #ffffff;
 }
 
 .container .notification {
     background-color: hsl(211, 68%, 96%);
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
+    border-radius: 10px;
     display: grid;
-    grid-template-columns: minmax(10rem, 1fr) 4fr auto auto;
+    grid-template-columns: 1fr 3fr auto auto;
+    margin-bottom: 12px;
+    padding: 15px 20px; 
 }
+
+.container .notification img {
+    width: 40px;
+    height: auto
+}
+
 
 .container .notification.read {
     background-color: hsl(0, 0%, 100%);
 }
-.container .notification.read .red-dot{
-    display: none;
-}
 
-.container .notification-text {
-    font-weight: bolder;
-    font-size: 1.2rem
+.container .notification.read .red-dot {
+    display: none;
 }
 
 .container .notification .msg-box {
@@ -57,53 +61,95 @@ body {
     border: 1px solid hsl(219, 12%, 42%);
 }
 
-.timestamp {
-    font-weight: lighter;
+.container .notification .timestamp {
+    font-weight: 400;
 }
 
 .name,
 .object {
-    font-size: 1.1rem;
-    font-weight: bolder;
+    font-size: 110%;
+    font-weight: 800;
 }
-
 
 /* hover effects below */
-.mark-as-read:hover{
-    color:  hsl(224, 21%, 14%);
-    font-size: 1.1rem;
-    font-weight: bolder;
-    transition: 0.3s;
-}
-.object:hover{
-    color:  hsl(219, 85%, 26%);
+.mark-as-read:hover {
+    color: hsl(224, 21%, 14%);
+    font-size: 110%;
+    font-weight: 800;
     transition: 0.3s;
 }
 
-.name:hover{
-    color:  hsl(219, 85%, 26%);
+.object:hover {
+    color: hsl(219, 85%, 26%);
     transition: 0.3s;
 }
 
-.msg-box:hover{
-    background-color:  hsl(211, 68%, 90%);
+.name:hover {
+    color: hsl(219, 85%, 26%);
+    transition: 0.3s;
+}
+
+.msg-box:hover {
+    background-color: hsl(211, 68%, 90%);
     transition: 0.3s;
 }
 
 
-/* red dot for unread msgs */
-#circle{
-    width: 16px;
-    height: 16px;
-    background:red;
-    border-radius:50%;
-    -moz-border-radius:50%;
-    -webkit-border-radius:50%;
-    line-height:20px;
-    vertical-align:middle;
-    text-align:center;
-    color:white;
+@media screen and (min-width: 376px) and (max-width: 768px) {
+    .container{
+        margin: 30px 40px; 
+        box-shadow: 10px 20px 50px  hsl(205, 33%, 90%);
+        border-radius: 20px;
     }
-  
+    .container .notification {
+        display: grid;
+        grid-template-columns: 1fr 3fr auto auto;
+        margin-bottom: 12px;
+        padding: 15px 20px; 
+    }
+}
 
 
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .container{
+        margin: 50px 160px; 
+        box-shadow: 10px 20px 50px  hsl(205, 33%, 90%);
+        border-radius: 20px;
+    }
+    .container .notification {
+        display: grid;
+        grid-template-columns: 1fr 6fr auto auto;
+        margin-bottom: 12px;
+        padding: 15px 20px; 
+    }
+    
+}
+
+@media screen and (min-width: 992px) and (max-width: 1440px) {
+    .container{
+        margin: 50px 250px; 
+        box-shadow: 10px 20px 50px  hsl(205, 33%, 90%);
+        border-radius: 20px;
+    }
+    .container .notification {
+        display: grid;
+        grid-template-columns: 1fr 7fr auto auto;
+        margin-bottom: 12px;
+        padding: 15px 20px; 
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    .container{
+        margin: 50px 450px; 
+        box-shadow: 10px 20px 50px  hsl(205, 33%, 90%);
+        border-radius: 20px;
+    }
+    .container .notification {
+        display: grid;
+        grid-template-columns: 1fr 8fr auto auto;
+        margin-bottom: 12px;
+        padding: 15px 20px; 
+    }
+}
